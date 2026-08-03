@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" />
+<style>
+  body { margin:0; background:#FAF8F5; -webkit-font-smoothing:antialiased; }
+  a { color:#5B7B6A; text-decoration:underline; text-underline-offset:2px; }
+  a:hover { color:#8FBFA8; }
+</style>
+</helmet>
+<div style="font-family:Nunito,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;color:#6B5B4E;max-width:1080px;margin:0 auto;padding:30px 20px 44px;box-sizing:border-box">
+
+  <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px">
+    <div style="font-family:Nunito;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#7A706A;font-weight:500">The Living Microbiome · Making science more digestible</div>
+    <h1 style="margin:0;font-family:Lora,Georgia,serif;font-weight:400;font-size:38px;line-height:1.2;letter-spacing:1px;color:#3D3530;max-width:24ch">The infant gut is an immune training ground</h1>
+    <p style="margin:0;font-size:16px;line-height:1.7;color:#6B5B4E;max-width:66ch;text-wrap:pretty">It is an immune organ that happens to digest food. The gut bacteria that settle in during the first months of life — your baby's gut garden — are training an immune system that will protect them for decades. Those signals reach nearly every organ in the body.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px">
+    <div style="display:flex;align-items:baseline;gap:9px;padding:10px 17px;border-radius:999px;background:#E5F0EA;border:1px solid #C7DDD0">
+      <span style="font-family:Lora,Georgia,serif;font-size:20px;font-weight:600;color:#5B7B6A">~70%</span>
+      <span style="font-size:13.5px;color:#5B7B6A;font-weight:500">of immune cells live in the gut</span>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:9px;padding:10px 17px;border-radius:999px;background:#F5F0EB;border:1px solid #D4C4A8">
+      <span style="font-family:Lora,Georgia,serif;font-size:20px;font-weight:600;color:#A68B6B">~80%</span>
+      <span style="font-size:13.5px;color:#6B5B4E;font-weight:500">of antibody-producing cells start here</span>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:9px;padding:10px 17px;border-radius:999px;background:#F1EEF5;border:1px solid #D3CADF">
+      <span style="font-size:13.5px;color:#6B5B7B;font-weight:500">Oral tolerance is <strong style="color:#8B7BAA;font-weight:700">not</strong> a default in early life</span>
+    </div>
+  </div>
+
+  <sc-if value="{{ showLegend }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:flex-end;align-items:center;margin-bottom:10px;font-size:12px;color:#7A706A">
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:999px;background:#8FBFA8;border:1px solid #5B7B6A"></span>Bifidobacterium</span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:999px;background:#C9A882;border:1px solid #A68B6B"></span>Bacteroides</span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;border-radius:999px;background:#D9D2C4;border:1px solid #C4B8A0"></span>Other bacteria</span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:11px solid #8B7BAA"></span>Immune cells (GALT)</span>
+    </div>
+  </sc-if>
+
+  <div style="border:1px solid #D4C4A8;border-radius:16px;background:#FAF8F5;overflow:hidden;margin-bottom:30px">
+    <div style="overflow-x:auto">
+      <svg viewBox="0 0 1000 700" style="display:block;width:100%;min-width:760px;height:auto" role="img" aria-label="Cross-section of the infant gut showing lumen, epithelial barrier and lamina propria">
+        <defs>
+          <linearGradient id="lumenFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F7F2EC"></stop>
+            <stop offset="1" stop-color="#EFE7DC"></stop>
+          </linearGradient>
+          <linearGradient id="milkFlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#C9A882"></stop>
+            <stop offset="1" stop-color="#E3D2B8"></stop>
+          </linearGradient>
+        </defs>
+
+        <rect x="205" y="70" width="779" height="230" rx="10" fill="url(#lumenFill)" stroke="#D4C4A8"></rect>
+        <text x="222" y="94" font-size="12.5" font-style="italic" fill="#7A706A" font-family="Lora, Georgia, serif">Gut lumen</text>
+        <text x="966" y="94" font-size="12" text-anchor="end" fill="#5B7B6A" font-family="Nunito, sans-serif" font-weight="600">SCFAs (acetate, butyrate) cross the barrier ↓</text>
+
+        <circle cx="262" cy="180" r="12" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="288" cy="196" r="10" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="276" cy="158" r="9" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="305" cy="175" r="13" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="330" cy="192" r="11" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="320" cy="155" r="8" fill="#C7DDD0" stroke="#5B7B6A" stroke-opacity="0.35"></circle>
+        <circle cx="350" cy="172" r="10" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="298" cy="215" r="7" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="245" cy="215" r="8" fill="#C9A882" stroke="#A68B6B"></circle>
+        <circle cx="345" cy="212" r="7" fill="#C9A882" stroke="#A68B6B"></circle>
+        <circle cx="268" cy="232" r="5" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+        <circle cx="322" cy="234" r="4" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+
+        <circle cx="430" cy="186" r="11" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="456" cy="205" r="9" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="452" cy="166" r="12" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="482" cy="188" r="10" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="508" cy="170" r="9" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="512" cy="204" r="8" fill="#C7DDD0" stroke="#5B7B6A" stroke-opacity="0.35"></circle>
+        <circle cx="536" cy="186" r="11" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="420" cy="222" r="8" fill="#C9A882" stroke="#A68B6B"></circle>
+        <circle cx="478" cy="224" r="9" fill="#C9A882" stroke="#A68B6B"></circle>
+        <circle cx="548" cy="214" r="7" fill="#D2B896" stroke="#A68B6B"></circle>
+        <circle cx="440" cy="240" r="5" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+        <circle cx="500" cy="242" r="4" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+        <circle cx="524" cy="232" r="5" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+
+        <circle cx="608" cy="192" r="10" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="634" cy="172" r="12" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="660" cy="196" r="9" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="686" cy="178" r="11" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="712" cy="196" r="10" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="650" cy="214" r="8" fill="#C7DDD0" stroke="#5B7B6A" stroke-opacity="0.35"></circle>
+        <circle cx="600" cy="224" r="8" fill="#C9A882" stroke="#A68B6B"></circle>
+        <circle cx="672" cy="232" r="7" fill="#D2B896" stroke="#A68B6B"></circle>
+        <circle cx="722" cy="220" r="9" fill="#C9A882" stroke="#A68B6B"></circle>
+        <circle cx="620" cy="244" r="4" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+        <circle cx="700" cy="238" r="5" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+
+        <circle cx="788" cy="184" r="11" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="814" cy="204" r="9" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="840" cy="182" r="12" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="866" cy="200" r="10" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="892" cy="180" r="9" fill="#A5CCB8" stroke="#5B7B6A" stroke-opacity="0.4"></circle>
+        <circle cx="918" cy="198" r="11" fill="#8FBFA8" stroke="#5B7B6A" stroke-opacity="0.55"></circle>
+        <circle cx="800" cy="228" r="8" fill="#C9A882" stroke="#A68B6B"></circle>
+        <circle cx="858" cy="226" r="7" fill="#D2B896" stroke="#A68B6B"></circle>
+        <circle cx="908" cy="222" r="8" fill="#C9A882" stroke="#A68B6B"></circle>
+        <circle cx="830" cy="244" r="5" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+        <circle cx="880" cy="240" r="4" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+        <circle cx="936" cy="232" r="5" fill="#D9D2C4" stroke="#C4B8A0"></circle>
+
+        <sc-if value="{{ showBreastMilk }}" hint-placeholder-val="{{ true }}">
+          <g>
+            <path d="M 104 252 C 104 292, 150 306, 214 292" fill="none" stroke="url(#milkFlow)" stroke-width="14" stroke-linecap="round"></path>
+            <path d="M 208 284 L 226 292 L 206 300 Z" fill="#C9A882"></path>
+            <rect x="16" y="62" width="176" height="192" rx="12" fill="#F7EFE4" stroke="#C9A882"></rect>
+            <text x="32" y="87" font-size="13" fill="#A68B6B" font-family="Lora, Georgia, serif" font-weight="600">Breast milk delivers</text>
+            <text x="32" y="111" font-size="11.5" fill="#6B5B4E" font-family="Nunito, sans-serif">Gut bacteria</text>
+            <text x="32" y="131" font-size="11.5" fill="#6B5B4E" font-family="Nunito, sans-serif">HMOs (prebiotics)</text>
+            <text x="32" y="151" font-size="11.5" fill="#6B5B4E" font-family="Nunito, sans-serif">sIgA antibodies</text>
+            <text x="32" y="171" font-size="11.5" fill="#6B5B4E" font-family="Nunito, sans-serif">Cytokines, TGF-β</text>
+            <text x="32" y="191" font-size="11.5" fill="#6B5B4E" font-family="Nunito, sans-serif">Live immune cells</text>
+            <text x="32" y="211" font-size="11.5" fill="#6B5B4E" font-family="Nunito, sans-serif">Food antigens</text>
+            <text x="32" y="236" font-size="14" fill="#A68B6B" font-family="Caveat, cursive">flows into the lumen →</text>
+          </g>
+        </sc-if>
+
+        <line x1="380" y1="258" x2="380" y2="374" stroke="#5B7B6A" stroke-width="1.6"></line>
+        <path d="M 374 370 L 380 384 L 386 370 Z" fill="#5B7B6A"></path>
+        <line x1="594" y1="258" x2="594" y2="374" stroke="#5B7B6A" stroke-width="1.6"></line>
+        <path d="M 588 370 L 594 384 L 600 370 Z" fill="#5B7B6A"></path>
+        <line x1="808" y1="258" x2="808" y2="374" stroke="#5B7B6A" stroke-width="1.6"></line>
+        <path d="M 802 370 L 808 384 L 814 370 Z" fill="#5B7B6A"></path>
+
+        <rect x="205" y="300" width="779" height="52" fill="#E5F0EA" stroke="#C7DDD0"></rect>
+        <line x1="205" y1="300" x2="984" y2="300" stroke="#8FBFA8" stroke-width="1.5"></line>
+        <line x1="205" y1="352" x2="984" y2="352" stroke="#8FBFA8" stroke-width="1.5"></line>
+        <line x1="270" y1="304" x2="270" y2="348" stroke="#8FBFA8" stroke-dasharray="3 4"></line>
+        <line x1="335" y1="304" x2="335" y2="348" stroke="#8FBFA8" stroke-dasharray="3 4"></line>
+        <line x1="465" y1="304" x2="465" y2="348" stroke="#8FBFA8" stroke-dasharray="3 4"></line>
+        <line x1="530" y1="304" x2="530" y2="348" stroke="#8FBFA8" stroke-dasharray="3 4"></line>
+        <line x1="660" y1="304" x2="660" y2="348" stroke="#8FBFA8" stroke-dasharray="3 4"></line>
+        <line x1="725" y1="304" x2="725" y2="348" stroke="#8FBFA8" stroke-dasharray="3 4"></line>
+        <line x1="875" y1="304" x2="875" y2="348" stroke="#8FBFA8" stroke-dasharray="3 4"></line>
+        <line x1="940" y1="304" x2="940" y2="348" stroke="#8FBFA8" stroke-dasharray="3 4"></line>
+        <text x="594" y="330" font-size="12" text-anchor="middle" fill="#5B7B6A" font-family="Nunito, sans-serif" font-weight="600">Epithelial barrier — one cell thick, and leakier in infants than in adults</text>
+
+        <rect x="205" y="352" width="779" height="218" rx="10" fill="#F1EEF5" stroke="#D3CADF"></rect>
+        <text x="222" y="379" font-size="13" fill="#8B7BAA" font-family="Lora, Georgia, serif" font-weight="600">Lamina propria — GALT (gut-associated lymphoid tissue)</text>
+
+        <path d="M 300 404 L 315 428 L 285 428 Z" fill="#6E6091"></path>
+        <text x="300" y="444" font-size="11.5" text-anchor="middle" fill="#6B5B7B" font-family="Nunito, sans-serif" font-weight="600">Treg</text>
+        <path d="M 400 406 L 414 428 L 386 428 Z" fill="#8B7BAA"></path>
+        <text x="400" y="444" font-size="11.5" text-anchor="middle" fill="#6B5B7B" font-family="Nunito, sans-serif" font-weight="600">Th17</text>
+        <path d="M 500 404 L 515 428 L 485 428 Z" fill="#A294C0"></path>
+        <text x="500" y="444" font-size="11.5" text-anchor="middle" fill="#6B5B7B" font-family="Nunito, sans-serif" font-weight="600">ILC3</text>
+        <path d="M 600 402 L 617 428 L 583 428 Z" fill="#6E6091"></path>
+        <text x="600" y="444" font-size="11.5" text-anchor="middle" fill="#6B5B7B" font-family="Nunito, sans-serif" font-weight="600">IgA</text>
+        <path d="M 700 406 L 714 428 L 686 428 Z" fill="#BCB1D2"></path>
+        <text x="700" y="444" font-size="11.5" text-anchor="middle" fill="#6B5B7B" font-family="Nunito, sans-serif" font-weight="600">ILC2</text>
+        <path d="M 800 404 L 815 428 L 785 428 Z" fill="#8B7BAA"></path>
+        <text x="800" y="444" font-size="11.5" text-anchor="middle" fill="#6B5B7B" font-family="Nunito, sans-serif" font-weight="600">Mac</text>
+
+        <ellipse cx="594" cy="504" rx="238" ry="34" fill="#E8E2F0" stroke="#A294C0" stroke-dasharray="5 5"></ellipse>
+        <path d="M 448 496 L 460 516 L 436 516 Z" fill="#8B7BAA"></path>
+        <path d="M 736 496 L 748 516 L 724 516 Z" fill="#A294C0"></path>
+        <text x="594" y="510" font-size="12.5" text-anchor="middle" font-style="italic" fill="#6E6091" font-family="Lora, Georgia, serif">Peyer's patch</text>
+
+        <line x1="274" y1="572" x2="274" y2="600" stroke="#8B7BAA" stroke-width="1.6"></line>
+        <path d="M 268 596 L 274 610 L 280 596 Z" fill="#8B7BAA"></path>
+        <text x="274" y="631" font-size="12.5" text-anchor="middle" fill="#8B7BAA" font-family="Nunito, sans-serif" font-weight="700">Brain</text>
+        <line x1="434" y1="572" x2="434" y2="600" stroke="#5B7B6A" stroke-width="1.6"></line>
+        <path d="M 428 596 L 434 610 L 440 596 Z" fill="#5B7B6A"></path>
+        <text x="434" y="631" font-size="12.5" text-anchor="middle" fill="#5B7B6A" font-family="Nunito, sans-serif" font-weight="700">Lungs</text>
+        <line x1="594" y1="572" x2="594" y2="600" stroke="#C97B6B" stroke-width="1.6"></line>
+        <path d="M 588 596 L 594 610 L 600 596 Z" fill="#C97B6B"></path>
+        <text x="594" y="631" font-size="12.5" text-anchor="middle" fill="#C97B6B" font-family="Nunito, sans-serif" font-weight="700">Skin</text>
+        <line x1="754" y1="572" x2="754" y2="600" stroke="#A68B6B" stroke-width="1.6"></line>
+        <path d="M 748 596 L 754 610 L 760 596 Z" fill="#A68B6B"></path>
+        <text x="754" y="631" font-size="12.5" text-anchor="middle" fill="#A68B6B" font-family="Nunito, sans-serif" font-weight="700">Metabolism</text>
+        <line x1="914" y1="572" x2="914" y2="600" stroke="#3D3530" stroke-width="1.6"></line>
+        <path d="M 908 596 L 914 610 L 920 596 Z" fill="#3D3530"></path>
+        <text x="914" y="631" font-size="12.5" text-anchor="middle" fill="#3D3530" font-family="Nunito, sans-serif" font-weight="700">Systemic</text>
+        <text x="594" y="665" font-size="12" text-anchor="middle" font-style="italic" fill="#7A706A" font-family="Lora, Georgia, serif">Trained immunity signals reach the whole body via metabolites, cytokines, and migrating cells</text>
+      </svg>
+    </div>
+  </div>
+
+  <div style="border:1px solid #C9A882;background:#F7EFE4;border-radius:16px;padding:26px;margin-bottom:36px">
+    <h2 style="margin:0 0 12px;font-family:Lora,Georgia,serif;font-weight:400;font-size:25px;line-height:1.3;letter-spacing:0.5px;color:#A68B6B;max-width:36ch">Breast milk is active immune education, not passive nutrition</h2>
+    <p style="margin:0 0 18px;font-size:15px;line-height:1.7;color:#6B5B4E;max-width:70ch;text-wrap:pretty">Breast milk shapes the gut microbiota, delivers immune cells that persist via microchimerism, and transfers antigens that can induce either tolerance or priming — depending on dose, timing, and maternal immune status (Verhasselt, 2024).</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span style="font-size:12.5px;padding:6px 12px;border-radius:999px;background:#FAF8F5;border:1px solid #D4C4A8;color:#A68B6B;font-weight:500">sIgA antibodies</span>
+      <span style="font-size:12.5px;padding:6px 12px;border-radius:999px;background:#FAF8F5;border:1px solid #D4C4A8;color:#A68B6B;font-weight:500">HMOs (prebiotics)</span>
+      <span style="font-size:12.5px;padding:6px 12px;border-radius:999px;background:#FAF8F5;border:1px solid #D4C4A8;color:#A68B6B;font-weight:500">Live immune cells</span>
+      <span style="font-size:12.5px;padding:6px 12px;border-radius:999px;background:#FAF8F5;border:1px solid #D4C4A8;color:#A68B6B;font-weight:500">Cytokines (TGF-β, IL-10)</span>
+      <span style="font-size:12.5px;padding:6px 12px;border-radius:999px;background:#FAF8F5;border:1px solid #D4C4A8;color:#A68B6B;font-weight:500">Food antigens</span>
+      <span style="font-size:12.5px;padding:6px 12px;border-radius:999px;background:#FAF8F5;border:1px solid #D4C4A8;color:#A68B6B;font-weight:500">Lactoferrin</span>
+      <span style="font-size:12.5px;padding:6px 12px;border-radius:999px;background:#FAF8F5;border:1px solid #D4C4A8;color:#A68B6B;font-weight:500">Microbiota</span>
+      <span style="font-size:12.5px;padding:6px 12px;border-radius:999px;background:#FAF8F5;border:1px solid #D4C4A8;color:#A68B6B;font-weight:500">Colostrum (unique ILC2 driver)</span>
+    </div>
+  </div>
+
+  <div style="margin-bottom:36px">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:16px">
+      <h2 style="margin:0;font-family:Lora,Georgia,serif;font-weight:400;font-size:25px;letter-spacing:0.5px;color:#5B7B6A">Where the training shows up</h2>
+      <span style="font-size:12.5px;color:#7A706A">Switch the lens · tap a card to read in full</span>
+    </div>
+
+    <div style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border:1px solid #D4C4A8;background:#F5F0EB;border-radius:999px;margin-bottom:20px">
+      <div style="position:absolute;top:4px;bottom:4px;width:calc((100% - 8px) / 3);border-radius:999px;background:#FAF8F5;box-shadow:0 1px 3px rgba(61,53,48,0.14);transition:left 220ms cubic-bezier(0.4,0,0.2,1);left:{{ pillLeft }}"></div>
+      <button type="button" onClick="{{ setOutcomes }}" style="position:relative;z-index:1;border:0;background:transparent;cursor:pointer;font-family:Nunito,sans-serif;font-size:13.5px;font-weight:600;color:#3D3530;padding:10px 6px;border-radius:999px" style-hover="color:#5B7B6A">Outcomes <span style="font-weight:400;color:#7A706A">(what parents see)</span></button>
+      <button type="button" onClick="{{ setMechanisms }}" style="position:relative;z-index:1;border:0;background:transparent;cursor:pointer;font-family:Nunito,sans-serif;font-size:13.5px;font-weight:600;color:#3D3530;padding:10px 6px;border-radius:999px" style-hover="color:#5B7B6A">Mechanisms <span style="font-weight:400;color:#7A706A">(how it works)</span></button>
+      <button type="button" onClick="{{ setTrained }}" style="position:relative;z-index:1;border:0;background:transparent;cursor:pointer;font-family:Nunito,sans-serif;font-size:13.5px;font-weight:600;color:#3D3530;padding:10px 6px;border-radius:999px" style-hover="color:#5B7B6A">Trained immunity</button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">
+      <div onClick="{{ toggleBrain }}" style="cursor:pointer;border:1px solid #E0D8CC;border-left:3px solid #8B7BAA;border-radius:14px;padding:19px 21px;background:#FAF8F5;transition:box-shadow 160ms,transform 160ms" style-hover="box-shadow:0 6px 18px rgba(61,53,48,0.1);transform:translateY(-1px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B7BAA" stroke-width="1.7"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3.2"></circle></svg>
+          <h3 style="margin:0;font-family:Nunito,sans-serif;font-size:16px;font-weight:600;color:#6B5B4E">Gut–brain axis</h3>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B5B4E;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-wrap:pretty;-webkit-line-clamp:{{ brainClamp }}">{{ brainBody }}</p>
+      </div>
+
+      <div onClick="{{ toggleLungs }}" style="cursor:pointer;border:1px solid #E0D8CC;border-left:3px solid #5B7B6A;border-radius:14px;padding:19px 21px;background:#FAF8F5;transition:box-shadow 160ms,transform 160ms" style-hover="box-shadow:0 6px 18px rgba(61,53,48,0.1);transform:translateY(-1px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B7B6A" stroke-width="1.7"><path d="M2 9c3-4 5 4 8 0s5 4 8 0"></path><path d="M2 16c3-4 5 4 8 0s5 4 8 0"></path></svg>
+          <h3 style="margin:0;font-family:Nunito,sans-serif;font-size:16px;font-weight:600;color:#6B5B4E">Gut–lung axis</h3>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B5B4E;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-wrap:pretty;-webkit-line-clamp:{{ lungsClamp }}">{{ lungsBody }}</p>
+      </div>
+
+      <div onClick="{{ toggleSkin }}" style="cursor:pointer;border:1px solid #E0D8CC;border-left:3px solid #C97B6B;border-radius:14px;padding:19px 21px;background:#FAF8F5;transition:box-shadow 160ms,transform 160ms" style-hover="box-shadow:0 6px 18px rgba(61,53,48,0.1);transform:translateY(-1px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C97B6B" stroke-width="1.7"><path d="M12 3c4 6 6 8.5 6 11a6 6 0 0 1-12 0c0-2.5 2-5 6-11z"></path></svg>
+          <h3 style="margin:0;font-family:Nunito,sans-serif;font-size:16px;font-weight:600;color:#6B5B4E">Skin and atopic disease</h3>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B5B4E;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-wrap:pretty;-webkit-line-clamp:{{ skinClamp }}">{{ skinBody }}</p>
+      </div>
+
+      <div onClick="{{ toggleMetab }}" style="cursor:pointer;border:1px solid #E0D8CC;border-left:3px solid #A68B6B;border-radius:14px;padding:19px 21px;background:#FAF8F5;transition:box-shadow 160ms,transform 160ms" style-hover="box-shadow:0 6px 18px rgba(61,53,48,0.1);transform:translateY(-1px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A68B6B" stroke-width="1.7"><path d="M2 13h5l2.5-6 3.5 12 2.5-6h6"></path></svg>
+          <h3 style="margin:0;font-family:Nunito,sans-serif;font-size:16px;font-weight:600;color:#6B5B4E">Metabolic programming</h3>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B5B4E;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-wrap:pretty;-webkit-line-clamp:{{ metabClamp }}">{{ metabBody }}</p>
+      </div>
+
+      <div onClick="{{ toggleSystemic }}" style="grid-column:1/-1;cursor:pointer;border:1px solid #D3CADF;border-left:3px solid #6E6091;border-radius:14px;padding:19px 21px;background:#F7F5FA;transition:box-shadow 160ms,transform 160ms" style-hover="box-shadow:0 6px 18px rgba(61,53,48,0.1);transform:translateY(-1px)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E6091" stroke-width="1.7"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"></path><path d="M9 12l2.2 2.2L15.5 10"></path></svg>
+          <h3 style="margin:0;font-family:Nunito,sans-serif;font-size:16px;font-weight:600;color:#6B5B4E">Systemic immune education</h3>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B5B4E;max-width:92ch;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-wrap:pretty;-webkit-line-clamp:{{ systemicClamp }}">{{ systemicBody }}</p>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ showTimeline }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <h2 style="margin:0 0 6px;font-family:Lora,Georgia,serif;font-weight:400;font-size:25px;letter-spacing:0.5px;color:#5B7B6A">The window of programming</h2>
+      <p style="margin:0 0 18px;font-size:13.5px;color:#7A706A">Bifidobacterium dominance gives way to diversification. Tap a phase.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px">
+        <button type="button" onClick="{{ setSeg0 }}" style="text-align:left;cursor:pointer;font-family:Nunito,sans-serif;border:1px solid #C7DDD0;border-radius:12px;padding:15px 16px;background:#E5F0EA;transition:box-shadow 160ms;box-shadow:{{ seg0Ring }}">
+          <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#5B7B6A;font-weight:600;margin-bottom:6px">Day 0–7</div>
+          <div style="font-family:Lora,Georgia,serif;font-size:16px;color:#3D3530">Pioneer species</div>
+        </button>
+        <button type="button" onClick="{{ setSeg1 }}" style="text-align:left;cursor:pointer;font-family:Nunito,sans-serif;border:1px solid #8FBFA8;border-radius:12px;padding:15px 16px;background:#C7DDD0;transition:box-shadow 160ms;box-shadow:{{ seg1Ring }}">
+          <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#4A6857;font-weight:600;margin-bottom:6px">Month 1–6</div>
+          <div style="font-family:Lora,Georgia,serif;font-size:16px;color:#3D3530">Bifido window</div>
+        </button>
+        <button type="button" onClick="{{ setSeg2 }}" style="text-align:left;cursor:pointer;font-family:Nunito,sans-serif;border:1px solid #D4C4A8;border-radius:12px;padding:15px 16px;background:#F0E7D8;transition:box-shadow 160ms;box-shadow:{{ seg2Ring }}">
+          <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#A68B6B;font-weight:600;margin-bottom:6px">Month 6–12</div>
+          <div style="font-family:Lora,Georgia,serif;font-size:16px;color:#3D3530">Solids transition</div>
+        </button>
+        <button type="button" onClick="{{ setSeg3 }}" style="text-align:left;cursor:pointer;font-family:Nunito,sans-serif;border:1px solid #D3CADF;border-radius:12px;padding:15px 16px;background:#EDE9F3;transition:box-shadow 160ms;box-shadow:{{ seg3Ring }}">
+          <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8B7BAA;font-weight:600;margin-bottom:6px">Year 1–3</div>
+          <div style="font-family:Lora,Georgia,serif;font-size:16px;color:#3D3530">Window closing</div>
+        </button>
+      </div>
+
+      <div style="margin-top:14px;border:1px solid #D4C4A8;border-radius:14px;background:#F5F0EB;padding:22px 24px">
+        <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:#7A706A;margin-bottom:10px">{{ segTitle }}</div>
+        <p style="margin:0;font-size:14.5px;line-height:1.75;color:#6B5B4E;max-width:88ch;text-wrap:pretty">{{ segBody }}</p>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="margin-top:36px;padding-top:22px;border-top:1px solid #D4C4A8;display:flex;flex-direction:column;gap:10px">
+    <div style="font-family:Lora,Georgia,serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#5B7B6A">Growing Little Guts <span style="font-style:italic;text-transform:none;letter-spacing:0.5px;color:#7A706A">| by The Living Microbiome</span></div>
+    <div style="font-family:Caveat,cursive;font-size:19px;color:#A68B6B">Nourish the little ones within</div>
+    <p style="margin:0;font-size:11.5px;line-height:1.7;color:#7A706A;max-width:86ch">Educational content only — not medical advice. Always consult your pediatrician. Claims sourced from Dzidic et al. 2018; Camacho-Morales et al. 2021; Nino et al. 2021; Velikova et al. 2024; Verhasselt 2024, and the primary studies named above. Some research cited is observational and does not establish causation.</p>
+  
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:flex-start;font-size:13.5px;font-weight:700;margin-top:2px">
+      <a style="color:#5B7B6A;text-decoration:none" href="REPLACE_WITH_POST_URL">&larr; Back to the post</a>
+      <a style="color:#5B7B6A;text-decoration:none" href="../">All figures</a>
+      <a style="color:#5B7B6A;text-decoration:none" href="https://thelivingmicrobiome.substack.com">Subscribe free</a>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;defaultView&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Outcomes&quot;, &quot;Mechanisms&quot;, &quot;Trained immunity&quot;], &quot;default&quot;: &quot;Outcomes&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Behavior&quot;},
+  &quot;cardsExpanded&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behavior&quot;},
+  &quot;showBreastMilkInput&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;},
+  &quot;showLegend&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;},
+  &quot;showTimeline&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}
+}">
+const CARDS = {
+  brain: {
+    outcomes: "Influences neurodevelopment, mood regulation, and stress response in early life",
+    mechanisms: "Vagus nerve signaling, microbial tryptophan metabolites (serotonin precursors), SCFA-mediated neuroimmune crosstalk. ~95% of serotonin produced in the gut.",
+    trained: "Microbial metabolite exposure in early life epigenetically programs microglial cells in the brain, affecting neuroinflammatory responses for years (Cruz-Carrillo & Camacho-Morales, 2021)."
+  },
+  lungs: {
+    outcomes: "First 100 days of gut dysbiosis linked to childhood asthma risk (CHILD cohort, Arrieta et al., 2015)",
+    mechanisms: "Gut SCFAs (butyrate, acetate) circulate systemically, modulating pulmonary immune cell activity. Microbiota-derived acetate protects against RSV via GPR43-type I interferon response. Tregs educated in GALT migrate to airways.",
+    trained: "Innate immune training (IIT): early bacterial colonization of gut and nasal airways epigenetically programs epithelial and innate immune cells, shaping asthma trajectory from infancy through childhood (Nino et al., 2021). Faecalibacterium, Lachnospira, Veillonella, Rothia are protective taxa."
+  },
+  skin: {
+    outcomes: "Bifidobacterium-dominant infants at 1 month have the lowest risk of eczema and food sensitization (Shibata et al., 2024)",
+    mechanisms: "Gut-skin axis: gut-derived SCFAs promote keratinocyte metabolism and differentiation, strengthening the skin barrier against allergic sensitization (Trompette et al., 2022). IgA coating patterns of bacteria in infant feces predict allergy years later (Dzidic et al., 2017).",
+    trained: "ILC2 expansion driven by colostrum intake in the first 48–72h may set type 2 immunity thresholds that influence allergic susceptibility — though preliminary data suggest this is protective, not harmful (Verhasselt, 2024)."
+  },
+  metab: {
+    outcomes: "Early microbiome modulation affects growth outcomes. BEP supplementation accelerated infant microbiome maturation (Deng et al., 2025, Nature Comms)",
+    mechanisms: "Microbial bile acid metabolism regulates lipid absorption and energy harvest. SCFAs signal through FFAR2 on adipocytes and enteroendocrine cells, affecting insulin sensitivity and appetite hormones (GLP-1, PYY). Maternal HFD during lactation expands Firmicutes and IL-17-producing ILC3s in offspring gut (Babu et al., 2018).",
+    trained: "Maternal diet during breastfeeding reshapes breast milk microbiota and immune composition. High-fat diets increase proinflammatory cytokines in breast milk, program adipose tissue macrophage ratios in offspring (Camacho-Morales et al., 2021). This is metabolic trained immunity — early nutritional signals with lasting epigenetic consequences."
+  },
+  systemic: {
+    outcomes: "Immune education during 0–3 years has lasting effects that cannot be fully corrected later (Olszak et al., 2012)",
+    mechanisms: "Microbial antigens drive Treg/Th17 balance in Peyer's patches. B. infantis metabolites promote Treg differentiation. ILC3-derived IL-22 maintains epithelial MHC-II expression (Fachi et al., 2025). Maternal leukocytes transferred via breast milk establish T-cell repositories in thymus, spleen, Peyer's patches, and persist into adulthood as microchimerism (Camacho-Morales et al., 2021).",
+    trained: "Trained innate immunity: microbial exposure epigenetically reprograms monocytes and macrophages via histone modifications and metabolic rewiring. This 'memory' in innate immune cells persists for months to years and can be transgenerational (Velikova et al., 2024; Netea et al., 2020). The weaning reaction — the inflammatory response to microbiota at introduction of solids — is itself required for adult immune competence (Al Nabhani et al., 2019)."
+  }
+};
+
+const SEGMENTS = [
+  { title: "Day 0–7 · Pioneer species", body: "Birth triggers first microbial exposure. Facultative anaerobes colonize first. Colostrum — produced only in the first 48–72h — is not just early milk. It contains 5–10x higher concentrations of IgA, lactoferrin, HMOs, growth factors, and immune cells compared to mature milk (Verhasselt, 2024). Colostrum drives ILC2 expansion and early alarmin (IL-33, IL-25) secretion that is required for anti-helminth defenses. Critically, oral tolerance to food antigens is NOT efficiently induced during this first week — the neonatal gut is prone to inflammatory priming, not tolerance." },
+  { title: "Month 1–6 · Bifido window", body: "Bifidobacterium dominates (up to 90% in breastfed infants), fueled by HMOs. This is the peak immune training period. B. infantis metabolites drive Treg differentiation and IgA production. Breast milk actively transfers maternal immune cells — T cells, macrophages, dendritic cells, stem cells — that establish microchimerism in the infant's tissues and persist into adulthood (Camacho-Morales et al., 2021). Maternal sIgA coats gut bacteria, setting up the ROR-γt+ Treg frequency across generations (Ramanan et al., 2020). The Shibata et al. (2024) enterotype data shows that what's established at 1 month predicts allergy risk years later." },
+  { title: "Month 6–12 · Solids transition", body: "Introduction of solid foods triggers the largest ecological shift after birth AND a specific immune event: the 'weaning reaction.' Al Nabhani et al. (2019) showed this inflammatory response to the changing microbiota is itself required for adult immune competence — without it, mice develop immunopathology later in life. Butyrate producers (Faecalibacterium, Roseburia) establish. Dietary antigens — not just microbiota — are necessary and sufficient to stimulate regulatory T cells in the small intestine (Kim et al., 2016, Science). This is where food diversity becomes a biological lever for immune training, and where Feed Your Flora enters the story." },
+  { title: "Year 1–3 · Window closing", body: "Community approaches adult-like composition. Trained innate immunity is now established: innate immune cells have been epigenetically reprogrammed by months of microbial exposure, creating enhanced responsiveness that persists for months to years (Velikova et al., 2024). Olszak et al. (2012) showed that microbial exposure during this window has persistent effects on NKT cell function that cannot be corrected later. The gut-lung axis is active: intestinal microbiome signatures at 1 year predict asthma at age 5 (COPSAC cohort). The microbiome-immune relationship shifts from active programming to ongoing maintenance." }
+];
+
+const VIEW_KEYS = { "Outcomes": "outcomes", "Mechanisms": "mechanisms", "Trained immunity": "trained" };
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const v = props && props.defaultView;
+    this.state = { view: VIEW_KEYS[v] ? v : "Outcomes", seg: 1, open: {} };
+  }
+
+  setView = (v) => this.setState({ view: v });
+  toggle = (k) => this.setState(s => ({ open: Object.assign({}, s.open, { [k]: !s.open[k] }) }));
+
+  clamp(k) {
+    return (this.props.cardsExpanded === true || this.state.open[k]) ? 99 : 3;
+  }
+
+  renderVals() {
+    const key = VIEW_KEYS[this.state.view] || "outcomes";
+    const idx = ["Outcomes", "Mechanisms", "Trained immunity"].indexOf(this.state.view);
+    const seg = SEGMENTS[this.state.seg];
+    const ring = (i) => this.state.seg === i ? "0 0 0 2px #5B7B6A inset, 0 4px 14px rgba(61,53,48,0.12)" : "none";
+    return {
+      showLegend: this.props.showLegend !== false,
+      showTimeline: this.props.showTimeline !== false,
+      showBreastMilk: this.props.showBreastMilkInput !== false,
+      pillLeft: "calc(4px + " + Math.max(idx, 0) + " * ((100% - 8px) / 3))",
+      setOutcomes: () => this.setView("Outcomes"),
+      setMechanisms: () => this.setView("Mechanisms"),
+      setTrained: () => this.setView("Trained immunity"),
+      brainBody: CARDS.brain[key], lungsBody: CARDS.lungs[key], skinBody: CARDS.skin[key],
+      metabBody: CARDS.metab[key], systemicBody: CARDS.systemic[key],
+      brainClamp: this.clamp("brain"), lungsClamp: this.clamp("lungs"), skinClamp: this.clamp("skin"),
+      metabClamp: this.clamp("metab"), systemicClamp: this.clamp("systemic"),
+      toggleBrain: () => this.toggle("brain"), toggleLungs: () => this.toggle("lungs"),
+      toggleSkin: () => this.toggle("skin"), toggleMetab: () => this.toggle("metab"),
+      toggleSystemic: () => this.toggle("systemic"),
+      setSeg0: () => this.setState({ seg: 0 }), setSeg1: () => this.setState({ seg: 1 }),
+      setSeg2: () => this.setState({ seg: 2 }), setSeg3: () => this.setState({ seg: 3 }),
+      seg0Ring: ring(0), seg1Ring: ring(1), seg2Ring: ring(2), seg3Ring: ring(3),
+      segTitle: seg.title, segBody: seg.body
+    };
+  }
+}
+
+</script>
+
+</body>
+</html>
